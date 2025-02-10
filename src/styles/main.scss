@@ -1,13 +1,13 @@
-@import 'variables';
-@import 'mixins';
-
-// Styles globaux
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
+@use './abstracts/functions';
+@use './abstracts/mixins';
+@use './abstracts/variables';
+@use './base/reset';
+@use './base/typography';
+@use './components/buttons';
+@use './components/carousel';
+@use './components/dropdown';
+@use './layout/footer';
+@use './layout/grid';
+@use './layout/header';
+@use './layout/navigation';
+@use './pages/home';
