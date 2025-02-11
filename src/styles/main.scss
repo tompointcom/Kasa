@@ -3,11 +3,11 @@
 @use './abstracts/variables';
 @use './base/reset';
 @use './base/typography';
+@use './components/banner';
 @use './components/buttons';
 @use './components/carousel';
 @use './components/dropdown';
 @use './layout/footer';
 @use './layout/grid';
 @use './layout/header';
-@use './layout/navigation';
 @use './pages/home';
