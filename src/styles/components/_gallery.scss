@@ -1,0 +1,14 @@
+@use '../abstracts/mixins' as m;
+
+.gallery {
+    @include m.flex-center;
+    position: relative;
+    width: 83%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 150px;
+    padding: 50px;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    margin: 40px auto;
+  }

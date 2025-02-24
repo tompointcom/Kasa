@@ -1,0 +1,21 @@
+@use '../abstracts/mixins' as m;
+
+.footer {
+    padding-top: 30px;
+    height: 209px;    
+    background: black;
+    @include m.flex-center;
+    flex-direction: column;
+
+    &__image {
+        width: 122px;
+        height: 40px;
+    }
+
+    &__text {
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}
