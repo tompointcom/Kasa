@@ -14,7 +14,7 @@ const DropdownContainer: React.FC = () => {
     },
     {
       title: "Service",
-      content: "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question."
+      content: "La qualité du service est au cœur de notre engagement chez Kasa. Nous veillons à ce que chaque interaction, que ce soit avec nos hôtes ou nos locataires, soit empreinte de respect et de bienveillance."
     },
     {
       title: "Sécurité",
