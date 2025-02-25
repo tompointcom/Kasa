@@ -15,19 +15,24 @@ const Dropdown: React.FC<DropdownProps> = ({ title, content }) => {
       <button 
         className={`dropdown__header ${isOpen ? 'active' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls="dropdown-content"
       >
         <h3 className="dropdown__title">{title}</h3>
         <img 
           src={chevron} 
-          alt="chevron" 
+          alt={isOpen ? "Close dropdown" : "Open dropdown"} 
           className={`dropdown__arrow ${isOpen ? 'active' : ''}`}
         />
       </button>
-      <div className={`dropdown__content ${isOpen ? 'active' : ''}`}>
+      <div 
+        id="dropdown-content"
+        className={`dropdown__content ${isOpen ? 'active' : ''}`}
+      >
         <p>{content}</p>
       </div>
     </div>
   );
-};
+}
 
 export default Dropdown;
