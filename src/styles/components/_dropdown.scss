@@ -1,0 +1,46 @@
+.dropdown {
+    width: 100%;
+    margin-bottom: 1rem;
+  
+    &__header {
+      width: 100%;
+      padding: 1rem;
+      background-color: #FF6060;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    &__title {
+      margin: 0;
+      font-size: 24px;
+    }
+  
+    &__arrow {
+      transition: transform 0.3s ease;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  
+    &__content {
+      background-color: #F6F6F6;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+  
+      &.active {
+        padding: 1rem;
+        max-height: 500px;
+      }
+  
+      p {
+        color: black;
+        margin: 0;
+      }
+    }
+  }

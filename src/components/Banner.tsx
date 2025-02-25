@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import background from '../assets/logo/background/background.png'
+import background from '../assets/background/background.png'
 import '../styles/components/_banner.scss';
 
 const Banner: React.FC = () => {
