@@ -5,6 +5,7 @@ import logements from '../../data/logements.json';
 import Footer from '../../components/Footer';
 import '../../styles/base/_reset.scss';
 
+
 const Home: React.FC = () => {
   const convertedLogements = logements.map(logement => ({
     ...logement,

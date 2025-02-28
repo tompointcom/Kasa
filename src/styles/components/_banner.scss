@@ -9,8 +9,18 @@
     height: 223px;
     border-radius: 25px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 30px auto;
     box-shadow: 0px 4px 4px #00000040;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        height: 180px;
+      }
+    
+      @media (max-width: 480px) {
+        width: 95%;
+        height: 150px;
+      }
     
 
 
@@ -24,6 +34,17 @@
         -webkit-text-stroke: 3px black;
         paint-order: stroke fill;
         text-shadow: 0px 3px 12px black;
+
+        @media (max-width: 768px) {
+            font-size: 36px;
+          }
+          
+          @media (max-width: 480px) {
+            font-size: 24px;
+            text-align: left;
+            left: 20px;
+            width: 80%;
+          }
       }
 
     &__image {
