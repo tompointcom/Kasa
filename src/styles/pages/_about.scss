@@ -6,6 +6,11 @@
 
 .about-content {
   flex: 1;
+  padding-bottom: 2rem; // Espace pour éviter que le contenu touche le footer
+  
+  @media (max-width: 480px) {
+    padding-bottom: 3rem; // Plus d'espace en bas sur mobile
+  }
 }
 
 .about {
@@ -15,6 +20,24 @@
     margin: 0 auto;
     padding: 0 100px;
     margin-bottom: 31px;
+    
+    @media (max-width: 992px) {
+      padding: 0 50px;
+    }
+    
+    @media (max-width: 768px) {
+      height: 180px;
+      width: 90%;
+      padding: 0 30px;
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 480px) {
+      height: 150px;
+      width: 95%;
+      padding: 0;
+      margin-bottom: 40px; // Plus d'espace après la bannière
+    }
   }
 
   &__background {
@@ -23,6 +46,19 @@
     object-fit: cover;
     border-radius: 25px;
     filter: brightness(0.7);
+    
+    @media (max-width: 480px) {
+      border-radius: 10px;
+    }
+  }
+  
+  &__dropdowns {
+    width: 80%;
+    max-width: 1023px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
