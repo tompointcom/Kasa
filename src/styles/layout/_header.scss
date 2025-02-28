@@ -1,11 +1,12 @@
-@use '../base/typography' as v;
+@use '../abstracts/mixins' as m;
 
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 6.25rem 1rem 6.25rem;
-    margin-bottom: 40px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 1rem 0; 
 
     img {
         width: 210.32px;
@@ -19,7 +20,6 @@
 
         &__linkText {
             color: black;
-            font-family: v.$font-primary;
             font-weight: 500;
             font-size: 24px;
             text-decoration: none;

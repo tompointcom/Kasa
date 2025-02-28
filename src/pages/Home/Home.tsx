@@ -1,15 +1,20 @@
 import React from 'react';
 import Banner from '../../components/Banner';
 import Gallery from '../../components/Gallery';
-import logements from '../../data/accomodations.json';
+import logements from '../../data/logements.json';
 import Footer from '../../components/Footer';
 import '../../styles/base/_reset.scss';
 
 const Home: React.FC = () => {
+  const convertedLogements = logements.map(logement => ({
+    ...logement,
+    rating: Number(logement.rating)
+  }));
+
   return (
     <div className="home">
       <Banner />
-      <Gallery logements={logements} />
+      <Gallery logements={convertedLogements} />
       <Footer />
     </div>
   );
