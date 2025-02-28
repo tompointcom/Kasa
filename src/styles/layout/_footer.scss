@@ -17,5 +17,14 @@
         font-size: 1.5rem;
         text-align: center;
         padding: 1rem;
+        
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 480px) {
+            font-size: 0.75rem; 
+            width: 30%;
+        }
     }
 }
