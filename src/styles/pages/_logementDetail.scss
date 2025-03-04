@@ -1,169 +1,306 @@
 .carousel {
-    position: relative;
-    width: 80%;
-    height: 615px;
-    border-radius: 25px;
-    overflow: hidden;
-    margin: 0 auto;
+  position: relative;
+  width: 80%;
+  height: 615px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 10px auto;
+  
+  @media (max-width: 992px) {
+    height: 500px;
+  }
+  
+  @media (max-width: 768px) {
+    height: 400px;
+    width: 90%;
+    border-radius: 15px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 400px;
+    width: 95%;
+    border-radius: 10px;
+  }
+  
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  &__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    width: 46px;
+    height: 79px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
     
-    &__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    @media (max-width: 768px) {
+      width: 30px;
+      height: 50px;
     }
     
-    &__control {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 2;
-      width: 46px;
-      height: 79px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
+    @media (max-width: 480px) {
+      width: 24px;
+      height: 24px;
+    }
+    
+    &--prev {
+      left: 20px;
+      
+      @media (max-width: 480px) {
+        left: 10px;
+      }
+    }
+    
+    &--next {
+      right: 20px;
+      
+      @media (max-width: 480px) {
+        right: 10px;
+      }
+    }
+    
+    &-icon {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      -webkit-user-drag: none; // Safari
+      -khtml-user-drag: none; // anciens navigateurs
+      -moz-user-select: none; // Firefox
+      -webkit-user-select: none; // Chrome/Safari
+      user-select: none; // Standard
       
       &--prev {
-        left: 20px;
+        transform: rotate(-90deg);
       }
       
       &--next {
-        right: 20px;
-      }
-      
-      &-icon {
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        -webkit-user-drag: none; // Safari
-        -khtml-user-drag: none; // anciens navigateurs
-        -moz-user-select: none; // Firefox
-        -webkit-user-select: none; // Chrome/Safari
-        user-select: none; // Standard
-        
-        &--prev {
-          transform: rotate(-90deg);
-        }
-        
-        &--next {
-          transform: rotate(90deg);
-        }
-      }
-    }
-    
-    &__counter {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-weight: 500;
-      font-size: 1.125rem;
-    }
-  }
-
-  .logement-info {
-    width: 80%;
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    
-    &__left {
-      flex: 1;
-    }
-    
-    &__right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 20px;
-    }
-    
-    &__title {
-      font-size: 36px;
-      font-weight: 500;
-      color: #FF6060;
-      margin-bottom: 5px;
-    }
-    
-    &__location {
-      font-size: 18px;
-      font-weight: 500;
-      color: black;
-      margin-bottom: 20px;
-    }
-    
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-      
-      .tag {
-        background-color: #FF6060;
-        color: white;
-        padding: 5px 15px;
-        border-radius: 10px;
-        font-size: 14px;
-        font-weight: 600;
-        text-align: center;
+        transform: rotate(90deg);
       }
     }
   }
   
-  .host {
-    display: flex;
-    align-items: center;
+  &__counter {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: 500;
+    font-size: 1.125rem;
     
-    &__name {
-      color: #FF6060;
-      font-size: 18px;
-      font-weight: 500;
-      margin-right: 10px;
-      text-align: right;
-      word-break: break-word;
-      max-width: 100px;
-      display: flex;
-      flex-direction: column;
+    @media (max-width: 480px) {
+      display: none; 
     }
+  }
+}
+
+.logement-info {
+  width: 80%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  @media (max-width: 480px) {
+    width: 95%;
+    flex-direction: column; // Empile les éléments verticalement
+  }
+  
+  &__left {
+    flex: 1;
+  }
+  
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
     
-    &__picture {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
+    @media (max-width: 480px) {
+      flex-direction: row-reverse; 
+      width: 100%;
+      margin-top: 20px; 
+      justify-content: space-between;
+      align-items: center;
+      order: 1;
     }
   }
   
-  .rating {
-    display: flex;
+  &__title {
+    font-size: 36px;
+    font-weight: 500;
+    color: #FF6060;
+    margin-bottom: 5px;
     
-    .star {
-      color: #E3E3E3;
-      font-size: 24px;
-      margin-left: 5px;
-      
-      &.active {
-        color: #FF6060;
-      }
-    }
-  }
-
-  .logement-dropdowns {
-    width: 80%;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
-    
-    // Pour la version mobile
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
+      font-size: 28px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 28px;
     }
   }
+  
+  &__location {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 20px;
+    
+    @media (max-width: 480px) {
+      margin-bottom: 10px;
+    }
+  }
+  
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    
+    @media (max-width: 480px) {
+      margin-top: 10px;
+      order: 0; 
+    }
+    
+    .tag {
+      background-color: #FF6060;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      
+      @media (max-width: 480px) {
+        font-size: 13px;
+        padding: 3px 10px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.host {
+  display: flex;
+  align-items: center;
+  
+  &__name {
+    color: #FF6060;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 10px;
+    text-align: right;
+    word-break: break-word;
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    
+    @media (max-width: 480px) {
+      font-size: 16px;
+      max-width: 85px;
+    }
+  }
+  
+  &__picture {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+    @media (max-width: 480px) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
+
+.rating {
+  display: flex;
+  
+  .star {
+    color: #E3E3E3;
+    font-size: 34px;
+    margin-left: 5px;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+    
+    @media (max-width: 480px) {
+      font-size: 22px;
+      margin-left: 2px;
+    }
+    
+    &.active {
+      color: #FF6060;
+    }
+  }
+}
+
+.logement-dropdowns {
+  width: 80%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  
+  @media (max-width: 992px) {
+    gap: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 30px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 95%;
+    margin: 20px auto;
+    gap: 20px;
+  }
+
+  .dropdown {
+    &__header {
+      padding: 8px 15px;
+      font-size: 13px;
+      min-height: 30px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.logement-page {
+  min-height: 92.5vh;
+  display: flex;
+  flex-direction: column;
+  
+  .logement-content {
+    flex: 1; 
+  }
+  
+
+  @media (max-width: 480px) {
+    .footer {
+      margin-top: auto; 
+      height: 300px;
+    }
+  }
+}
