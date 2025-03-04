@@ -1,46 +1,65 @@
 .dropdown {
+  width: 100%;
+  margin-bottom: 1rem;
+  position: relative; 
+  z-index: 1; 
+
+  &__header {
     width: 100%;
-    margin-bottom: 1rem;
-  
-    &__header {
-      width: 100%;
+    padding: 1rem;
+    background-color: #FF6060;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative; 
+    z-index: 3; 
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  &__arrow {
+    transition: transform 0.3s ease;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    background-color: #F6F6F6;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    position: relative; 
+    z-index: 2; 
+    border-radius: 0 0 5px 5px; 
+    margin-top: -5px; 
+
+    &.active {
       padding: 1rem;
-      background-color: #FF6060;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
     }
-  
-    &__title {
+
+    p {
+      color: black;
       margin: 0;
-      font-size: 24px;
-    }
-  
-    &__arrow {
-      transition: transform 0.3s ease;
-      &.active {
-        transform: rotate(180deg);
-      }
-    }
-  
-    &__content {
-      background-color: #F6F6F6;
-      padding: 0;
-      max-height: 0;
-      overflow: hidden;
-  
-      &.active {
-        padding: 1rem;
-        max-height: 500px;
-      }
-  
-      p {
-        color: black;
-        margin: 0;
+      font-size: 18px;
+      line-height: 1.5;
+
+      @media (max-width: 480px) {
+        font-size: 14px;
       }
     }
   }
+}
