@@ -4,7 +4,6 @@ import { Logement } from '../../types';
 import Carousel from '../../components/Carousel';
 import Footer from '../../components/Footer';
 import Dropdown from '../../components/Dropdown';
-import chevron from '../../assets/icons/chevron.svg';
 import '../../styles/pages/_logementDetail.scss';
 
 const LogementDetail: React.FC = () => {
@@ -12,7 +11,6 @@ const LogementDetail: React.FC = () => {
   const navigate = useNavigate();
   const [logement, setLogement] = useState<Logement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   useEffect(() => {
     // Charger les données du logement
@@ -43,23 +41,6 @@ const LogementDetail: React.FC = () => {
 
     fetchLogement();
   }, [id, navigate]);
-
-  // Fonctions pour naviguer entre les images
-  const nextImage = () => {
-    if (logement && logement.pictures) {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === logement.pictures.length - 1 ? 0 : prevIndex + 1
-      );
-    }
-  };
-
-  const prevImage = () => {
-    if (logement && logement.pictures) {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1
-      );
-    }
-  };
 
   if (loading) return <div className="loading">Chargement...</div>;
   if (!logement) return null;
