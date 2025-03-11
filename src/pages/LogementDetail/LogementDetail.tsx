@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Logement } from '../../types';
+import Carousel from '../../components/Carousel';
 import Footer from '../../components/Footer';
 import Dropdown from '../../components/Dropdown';
 import chevron from '../../assets/icons/chevron.svg';
@@ -68,46 +69,7 @@ const LogementDetail: React.FC = () => {
       <div className="logement-content">
         {/* Carousel d'images */}
         {logement.pictures && logement.pictures.length > 0 && (
-          <div className="carousel">
-            <img 
-              src={logement.pictures[currentImageIndex]} 
-              alt={`${logement.title} - Vue ${currentImageIndex + 1}`} 
-              className="carousel__image"
-            />
-            
-            {/* N'afficher les contrôles que s'il y a plus d'une image */}
-            {logement.pictures.length > 1 && (
-              <>
-                <button 
-                  onClick={prevImage} 
-                  className="carousel__control carousel__control--prev"
-                  aria-label="Image précédente"
-                >
-                  <img 
-                    src={chevron} 
-                    alt="Précédent" 
-                    className="carousel__control-icon carousel__control-icon--prev" 
-                    draggable="false"
-                  />
-                </button>
-                <button 
-                  onClick={nextImage} 
-                  className="carousel__control carousel__control--next"
-                  aria-label="Image suivante"
-                >
-                  <img 
-                    src={chevron} 
-                    alt="Suivant" 
-                    className="carousel__control-icon carousel__control-icon--next" 
-                    draggable="false"
-                  />
-                </button>
-                <div className="carousel__counter">
-                  {currentImageIndex + 1}/{logement.pictures.length}
-                </div>
-              </>
-            )}
-          </div>
+          <Carousel images={logement.pictures} />
         )}
         
         {/* Information de la location */}
