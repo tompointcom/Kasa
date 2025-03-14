@@ -109,9 +109,7 @@ const LogementDetail: React.FC = () => {
           content={logement.equipments.join('\n')} 
         />
       </div>
-      
     </div>
-    <Footer />
   </div>
 );
 };

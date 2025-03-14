@@ -16,7 +16,6 @@ const Home: React.FC = () => {
     <div className="home">
       <Banner />
       <Gallery logements={convertedLogements} />
-      <Footer />
     </div>
   );
 };

@@ -11,7 +11,6 @@ const NotFound: React.FC = () => {
         <p className="error__text">Oups! La page que vous demandez n'existe pas.</p>
         <Link to="/" className="error__link">Retour à l'accueil</Link>
       </div>
-      <Footer />
     </div>
   );
 };
