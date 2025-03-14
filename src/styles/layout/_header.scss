@@ -19,6 +19,15 @@
         height: 47px;
       }
 
+      @media (max-width: 768px) {
+        width: 145px;
+        height: 47px;
+      }
+
+      @media (max-width: 480px) {
+        width: 100px;
+        height: 32px;
+      }
     }
   
   
