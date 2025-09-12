@@ -39,7 +39,7 @@ const LogementDetail: React.FC = () => {
     };
 
     fetchLogement();
-  });
+  }, []);
 
   if (loading) return <div className="loading">Chargement...</div>;
   if (!logement) return null;

@@ -1,15 +1,14 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import NotFound from './pages/ErrorPage/NotFound';
 import LogementDetail from './pages/LogementDetail/LogementDetail';
 import Footer from './components/Footer';
-import logements from './data/logements.json';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app-container">
         <Navigation />
         <main className="main-content">
@@ -22,7 +21,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
