@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Logement } from '../../types';
 import Carousel from '../../components/Carousel';
-import Footer from '../../components/Footer';
 import Dropdown from '../../components/Dropdown';
 import '../../styles/pages/_logementDetail.scss';
 
